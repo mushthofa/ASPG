@@ -1,0 +1,12 @@
+protein(x1).
+protein(x2).
+protein(x3).
+
+activates(x1,x1).
+activates(x2,x1).
+activates(x3,x2).
+activates(x1,x2).
+activates(x2,x3).
+inhibits(x3,x3).
+activates(x1,x3).
+inhibits(x3,x1).

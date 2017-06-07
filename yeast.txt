@@ -1,0 +1,59 @@
+protein(cellsize).
+protein(cln3). 
+protein(clb56).
+protein(sbf).
+protein(cdh1).
+protein(mbf).
+protein(clb12).
+protein(cln12).
+protein(mcm1).
+protein(sic1).
+protein(cdc20).
+protein(swi5).
+%Cln3
+activates(cellsize, cln3).
+% SBF
+activates(sbf, sbf).
+activates(cln3, sbf).
+inhibits(clb12, sbf).
+% MBF
+activates(cln3, mbf).
+activates(mbf, mbf).
+inhibits(clb12, mbf).
+%Cln1,2
+activates(sbf, cln12).
+%Sic1
+activates(sic1, sic1).
+activates(cdc20, sic1).
+activates(swi5, sic1).
+inhibits(cln12, sic1).
+inhibits(clb12, sic1).
+inhibits(clb56, sic1).
+%Clb5,6
+activates(mbf, clb56).
+activates(clb56, clb56).
+inhibits(sic1, clb56).
+inhibits(cdc20, clb56).
+%Cdh1
+activates(cdh1, cdh1).
+activates(cdc20, cdh1).
+inhibits(cln12, cdh1).
+inhibits(clb56, cdh1).
+inhibits(clb12, cdh1).
+%Clb1,2
+activates(clb56, clb12).
+activates(clb12, clb12).
+activates(mcm1, clb12).
+inhibits(sic1, clb12).
+inhibits(cdh1, clb12).
+inhibits(cdc20, clb12).
+%Mcm1
+activates(clb56, mcm1).
+activates(clb12, mcm1).
+%Cdc20
+activates(clb12, cdc20).
+activates(mcm1, cdc20).
+%Swi5
+activates(mcm1, swi5).
+activates(cdc20, swi5).
+inhibits(clb12, swi5).
